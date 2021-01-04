@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Letsee WebAR Demo</title>
+  <script src="https://cdn.letsee.io/webar/letsee-0.9.18.min.js"></script>
+  <link rel="stylesheet" href="./stylesheets/main.css">
+  <input type="file" accept="image/*" capture="camera">
+  <style media="place" type="text/css">
+      #container {
+          -letsee-target: uri('letsee-marker.json');
+      }
+  </style>
+</head>
+<body>
+  <div class="booth">
+    <video id="video" width="800" height="600" autoplay=""></video>
+    <canvas id="canvas" width="800" height="600"></canvas>
+</div>
+<script src="./javascripts/video.js"></script>
+<div id="container"><h1 style="color: black">Hello, world!</h1></div>
+<script>
+  const config = {
+      "appKey": "40a30bbd593462a7b3bebdb0161c426bfcf40832e96f12ce480ec9c012c75dc0",   // Replace the app key here with your own app key
+      "trackerType": "letsee-marker.jpg",     // For planar image tracking, trackerType should be IMAGE
+  };
+  const letsee = new Letsee(config);
+</script>
+</body>
+</html>
